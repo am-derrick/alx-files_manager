@@ -1,7 +1,8 @@
 import express from 'express';
 import AppController from '../controllers/AppController';
 import UsersController from '../controllers/UsersController';
-import AuthController from '../controlers/AuthController';
+import AuthController from '../controllers/AuthController';
+import FilesController from '../contollers/FilesController';
 
 const router = express.Router();
 
@@ -14,5 +15,6 @@ router.get('/users/me', UserContoller.getMe);
 
 // POST routes
 router.post('/users', UsersController.postNew);
+router.post('files', FilesContoller.postUpload);
 
 module.exports = router;
