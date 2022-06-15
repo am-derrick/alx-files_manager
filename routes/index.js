@@ -14,9 +14,14 @@ router.get('/disconnect', AuthController.getDisconnect);
 router.get('/users/me', UserContoller.getMe);
 router.get('/files/:id', FilesController.getShow);
 router.get('/files', FilesController.getIndex);
+router.get('/files/:id/data', FilesController.getFile);
 
 // POST routes
 router.post('/users', UsersController.postNew);
 router.post('files', FilesContoller.postUpload);
+
+// PUT routes
+router.put('/files/:id/publish', FilesController.putPublish);
+router.put('/files/:id/publish', FilesController.putUnpublish);
 
 module.exports = router;
